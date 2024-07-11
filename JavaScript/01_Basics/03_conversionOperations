@@ -1,0 +1,18 @@
+// let score = "37abc"
+// console.log(typeof score);
+// let valueInNum = Number(score)
+// console.log(typeof valueInNum);
+// console.log(valueInNum);
+
+// let test1 = null
+// let test1InNum = Number(test1)
+// console.log(test1InNum);
+
+// let test2 = undefined
+// let test2InNum = Number(test2)
+// console.log(test2InNum);
+
+
+let isTrue = ""
+let isTrueInBool = Boolean(isTrue)
+console.log(isTrueInBool);

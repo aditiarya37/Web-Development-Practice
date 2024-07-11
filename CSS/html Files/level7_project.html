@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #button {
+            background-color: lightslategrey;
+            color: antiquewhite;
+            border-radius: 2px;
+            height: 30px;
+            width: 80px;
+            position: relative;
+            left: 330px;
+            top: 100px;
+        }
+        #button:hover {
+            background-color: antiquewhite;
+            color: lightslategrey;
+        }
+        .progress-container {
+            height: 20px;
+            width: 40%;
+            position: relative;
+            top: 180px;
+            left: 220px;
+            background-color: blanchedalmond;
+            border: 2px solid;
+            border-radius: 10px;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: lightslategrey;
+            border-radius: 8px;
+        }
+        .fillIt {
+            animation: fillIt 4s ease-out 0s 1;
+        }
+        @keyframes fillIt {
+                0% {width: 0%;}
+                90% {width: 80%;}
+                95% {width: 85%;}
+                100% {width: 100%;}
+            }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <div id="progress-bar" class="progress-bar"></div>
+    </div>
+    <button id="button">Continue</button>
+
+    <script>
+        document.getElementById('button').addEventListener('click', function() {
+            var progressBar = document.getElementById('progress-bar');
+            progressBar.style.width = '0%'; // Reset the width
+            progressBar.classList.remove('fillIt'); // Remove the class to restart the animation
+            void progressBar.offsetWidth; // Trigger a reflow
+            progressBar.classList.add('fillIt'); // Add the class to start the animation
+        });
+    </script>
+    
+</body>
+</html>

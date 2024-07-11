@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            background-color: cornflowerblue;
+            height: 200px;
+            width: 200px;
+            text-align: center;
+        }
+        #button {
+            padding: 10px 15px;
+            margin: 100px;
+            height: 100px;
+            width: 100px;
+            border: 2px dotted red;
+            border-radius: 100px;
+            background-color: aquamarine;
+        }
+        .box {
+            background-color: darkolivegreen;
+            border: 2px solid;
+            height: 100px;
+            width: 100px;
+            margin: 5px;
+        }
+        #box1 {
+            box-sizing: border-box;
+        }
+        #box2 {
+            box-sizing: content-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1>BOX</h1>
+    </div>
+    <button id="button">
+        BUTTON
+    </button>
+    <div id="box1" class="box">
+        Box1
+    </div>
+    <div id="box2" class="box">
+        Box2
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            height: 100px;
+            width: 100px;
+            background-color: lightslategrey;
+            border: 2px solid;
+            position: relative;
+            top: 200px;
+            left: 50px;
+            animation: sinWave 1s ease-in-out 0.5s infinite alternate;
+        }
+        @keyframes sinWave {
+            0% { left: 50px; top: 50px}
+            25% { left: 100px; top: -50px }
+            50% { left: 200px; top: 50px }
+            75% { left: 300px; top: -50px}
+            100% { left: 400px; top: 50px}
+        }
+    </style>
+</head>
+<body>
+    <div id="box">Box</div>
+</body>
+</html>
