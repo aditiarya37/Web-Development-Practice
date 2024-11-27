@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Chinese</li>
+    </ul>
+</body>
+<script>
+    // Adding an element
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("English")
+    addLanguage("Hindi")
+
+    // More optimized approach
+    function addLanguageOpti(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("Japanese")
+    addLanguage("Korean")
+
+    // Editing and element
+    const sLang = document.querySelector("li:nth-child(2)")
+
+    // 1) Using innerHTMl
+    // sLang.innerHTML = "Spanish"
+
+    // 2) Using textContent and replaceWith
+    const newLi = document.createElement('li')
+    newLi.textContent = "Spanish"
+    sLang.replaceWith(newLi)
+
+    // 3) Using outerHTML
+    const fLang = document.querySelector("li:first-child")
+    fLang.outerHTML = "<li>German</li>"
+
+    // Removing an element
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+</script>
+</html>
