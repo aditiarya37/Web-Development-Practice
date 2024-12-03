@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <h2 style="text-align: center;">Images</h2> <br>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: cadetblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // false is called bubbling mode (gives values from inside to outside) 
+    // true is called capturing mode (gives values from outside to inside)
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked on images");
+    //     // alert("images clicked")
+    // },false)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     // alert("owl clicked")
+    //     e.stopPropagation()
+    //     // this stops the propagation and stops here only
+    // },false)
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     console.log("google clicked");
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    // },false)
+
+    // Let's remove an image by clicking on it
+    document.querySelector('#images').addEventListener('click', function(e){
+        if(e.target.tagName==='IMG'){
+            let rem = e.target.parentNode
+            rem.remove()
+            // rem.parentNode.removeChild(rem)
+        }
+    }, false)
+</script>
+</html>

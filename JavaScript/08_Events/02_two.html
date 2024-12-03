@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <h1>Give up, Naruto!</h1>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    const print = function(){
+        console.log("execution done");
+    }
+    const answer = function(){
+        document.querySelector('h1').innerHTML = "GIVE UP on trying to make me give up!"
+    }
+    setTimeout(print, 2000)
+    const change = setTimeout(answer, 3000)
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(change)
+        console.log("Stopped");
+    })
+</script>
+</html>
